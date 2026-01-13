@@ -1,0 +1,123 @@
+SQL> create table student2(
+  2  RollNo interger,
+  3  Name varchar(20),
+  4  Gender char(1),
+  5  CGPA Number (5,2));
+RollNo interger,
+       *
+ERROR at line 2:
+ORA-00902: invalid datatype 
+
+
+SQL> create table student2(
+  2  RollNo integer,
+  3  Name varchar(20),
+  4  Gender char(1),
+  5  CGPA Number (5,2));
+
+Table created.
+
+SQL> display student2
+SP2-0734: unknown command beginning "display st..." - rest of line ignored.
+SQL> describe student2
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ROLLNO                                             NUMBER(38)
+ NAME                                               VARCHAR2(20)
+ GENDER                                             CHAR(1)
+ CGPA                                               NUMBER(5,2)
+
+SQL> INSERT INTO student2 VALUES (1, 'Amit', 'M', 8.50);
+
+1 row created.
+
+SQL> INSERT INTO student2 VALUES (2, 'Riya', 'F', 9.20);
+
+1 row created.
+
+SQL> INSERT INTO student2 VALUES (3, 'Sourav', 'M', 7.85);
+
+1 row created.
+
+SQL> INSERT INTO student2 VALUES (4, 'Neha', 'F', 8.00);
+
+1 row created.
+
+SQL> INSERT INTO student2 VALUES (5, 'Arjun', 'M', 6.95);
+
+1 row created.
+
+SQL> SELECT * FROM student2;
+
+    ROLLNO NAME                 G       CGPA                                    
+---------- -------------------- - ----------                                    
+         1 Amit                 M        8.5                                    
+         2 Riya                 F        9.2                                    
+         3 Sourav               M       7.85                                    
+         4 Neha                 F          8                                    
+         5 Arjun                M       6.95                                    
+
+SQL> update student2
+  2  set
+  3  
+SQL> UPDATE student2
+  2  SET RollNO=24155130
+  3  WHERE CGPA=8.5;
+
+1 row updated.
+
+SQL> SELECT FROM * student2
+  2  SELECT FROM * student2;
+SELECT FROM * student2
+       *
+ERROR at line 1:
+ORA-00936: missing expression 
+
+
+SQL> SELECT FROM * student2;
+SELECT FROM * student2
+       *
+ERROR at line 1:
+ORA-00936: missing expression 
+
+
+SQL> SELECT * FROM  student2;
+
+    ROLLNO NAME                 G       CGPA                                    
+---------- -------------------- - ----------                                    
+  24155130 Amit                 M        8.5                                    
+         2 Riya                 F        9.2                                    
+         3 Sourav               M       7.85                                    
+         4 Neha                 F          8                                    
+         5 Arjun                M       6.95                                    
+
+SQL> UPDATE student2
+  2    2  SET RollNO=24155130
+  3  se
+  4  
+SQL> UPDATE student2
+  2  SET RollNo=24155138
+  3  WHERE Name=Riya;
+WHERE Name=Riya
+           *
+ERROR at line 3:
+ORA-00904: "RIYA": invalid identifier 
+
+
+SQL> UPDATE student2
+  2  SET RollNO=24155138
+  3  WHERE CGPA=9.2;
+
+1 row updated.
+
+SQL> SELECT * FROM  student2;
+
+    ROLLNO NAME                 G       CGPA                                    
+---------- -------------------- - ----------                                    
+  24155130 Amit                 M        8.5                                    
+  24155138 Riya                 F        9.2                                    
+         3 Sourav               M       7.85                                    
+         4 Neha                 F          8                                    
+         5 Arjun                M       6.95                                    
+
+SQL> SPOOL OFF;
